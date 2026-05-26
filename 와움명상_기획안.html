@@ -163,7 +163,8 @@
     line-height:1.4;
     margin-bottom:14px;
   }
-  .formula .plus, .formula .eq, .formula .arrow{color:var(--bronze);margin:0 8px;font-weight:400}
+  .formula .plus, .formula .eq, .formula .arrow, .formula .bracket{color:var(--bronze);margin:0 8px;font-weight:400}
+  .formula .bracket{margin:0 4px}
   .formula .em{color:var(--moss-deep)}
   .formula-note{
     font-size:14px;color:var(--ink-soft);letter-spacing:0.05em;
@@ -192,6 +193,7 @@
   }
   .formula-cell .term-en{font-size:11px;letter-spacing:0.2em;color:var(--bronze);font-weight:500;margin-bottom:14px;text-transform:uppercase}
   .formula-cell p{font-size:13.5px;color:var(--ink-soft);line-height:1.75;font-weight:300}
+  .formula-cell p em{font-style:italic;color:var(--moss-deep);font-weight:400}
 
   /* Principle Models — 3 model blocks */
   .principle-models{margin-top:88px}
@@ -247,6 +249,100 @@
     font-size:14.5px;color:var(--ink);line-height:1.85;font-weight:400;
   }
   .model-insight p em{font-style:normal;color:var(--moss-deep);font-weight:500}
+
+  /* Formula grid 2x2 layout (for principle section's 4 elements) */
+  .formula-grid.formula-grid-2x2{grid-template-columns:1fr 1fr}
+  .formula-grid.formula-grid-2x2 .formula-cell{
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .formula-grid.formula-grid-2x2 .formula-cell:nth-child(2n){border-right:none}
+  .formula-grid.formula-grid-2x2 .formula-cell:nth-last-child(-n+2){border-bottom:none}
+  .formula-grid.formula-grid-2x2 .formula-cell p em{
+    font-style:italic;color:var(--moss-deep);font-weight:400;
+  }
+
+  /* Principle insight — standalone prominent block */
+  .principle-insight{
+    max-width:840px;margin:88px auto 0;padding:56px 48px;
+    background:var(--bg-soft);
+    border-left:3px solid var(--moss);
+  }
+  .principle-insight .insight-label{
+    font-family:'Noto Serif KR',serif;
+    color:var(--moss-deep);font-weight:600;
+    font-size:clamp(18px,2.2vw,22px);
+    margin-bottom:28px;letter-spacing:0.01em;line-height:1.4;
+  }
+  .principle-insight p{
+    font-size:15.5px;color:var(--ink);
+    line-height:2;font-weight:300;margin-bottom:20px;
+  }
+  .principle-insight p:last-child{margin-bottom:0}
+  .principle-insight p em{
+    font-style:italic;color:var(--moss-deep);font-weight:400;
+  }
+  @media(max-width:680px){
+    .principle-insight{padding:40px 28px}
+  }
+
+  /* Principle closing — final paragraph */
+  .principle-closing{
+    max-width:760px;margin:56px auto 0;padding:0 32px;
+    font-size:16px;color:var(--ink);line-height:2;
+    font-weight:300;text-align:center;
+  }
+  .principle-closing em{font-style:italic;color:var(--moss-deep)}
+
+  /* Program blocks — Waum programs intro section */
+  .program-blocks{
+    margin-top:64px;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+  }
+  .program-block{
+    background:var(--mist);border:1px solid var(--line);
+    padding:36px 32px;display:flex;flex-direction:column;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .program-block:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 32px rgba(35,38,31,0.08);
+  }
+  .program-block .tag{
+    display:inline-block;font-size:11px;letter-spacing:0.25em;
+    color:var(--bronze);text-transform:uppercase;
+    margin-bottom:18px;font-weight:500;
+  }
+  .program-block h3{
+    font-size:23px;margin-bottom:6px;color:var(--ink);
+    font-weight:500;line-height:1.3;
+  }
+  .program-block .sub{
+    font-size:13px;color:var(--moss);
+    letter-spacing:0.05em;margin-bottom:20px;
+  }
+  .program-block p{
+    font-size:14.5px;color:var(--ink-soft);line-height:1.85;
+    font-weight:300;margin-bottom:24px;flex:1;
+  }
+  .program-block .link{
+    display:inline-block;align-self:flex-start;
+    color:var(--moss-deep);text-decoration:none;
+    font-size:13px;font-weight:500;letter-spacing:0.1em;
+    border-bottom:1px solid var(--bronze);
+    padding-bottom:3px;transition:color .2s, border-color .2s;
+  }
+  .program-block .link:hover{
+    color:var(--bronze);border-color:var(--moss-deep);
+  }
+  .program-block .link-pending{
+    display:inline-block;align-self:flex-start;
+    color:var(--ink-soft);
+    font-size:12px;letter-spacing:0.1em;font-style:italic;
+  }
+  @media(max-width:780px){
+    .program-blocks{grid-template-columns:1fr}
+  }
 
   /* Benefits Summary */
   .benefits-summary{margin-top:88px;padding-top:64px;border-top:1px solid var(--line)}
@@ -427,6 +523,25 @@
   }
   .pull em{font-style:normal;color:var(--moss-deep);font-weight:600}
 
+  /* Closing — 사회 속의 와움 */
+  .closing-box{
+    margin:64px auto 0;max-width:780px;
+    background:var(--mist);border:1px solid var(--line);
+    padding:56px 56px;
+    font-size:16px;line-height:2;color:var(--ink-soft);font-weight:300;
+  }
+  .closing-box p{margin-bottom:22px}
+  .closing-box p:last-child{margin-bottom:0}
+  .closing-box strong{color:var(--ink);font-weight:500}
+  .closing-sign{
+    margin:48px auto 0;max-width:780px;text-align:center;
+    font-family:'Noto Serif KR',serif;font-size:20px;
+    color:var(--moss-deep);font-weight:500;letter-spacing:0.02em;
+  }
+  @media(max-width:680px){
+    .closing-box{padding:40px 28px;font-size:15px}
+  }
+
   /* Footer */
   footer{padding:80px 0 60px;border-top:1px solid var(--line);background:var(--bg-soft)}
   footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px}
@@ -449,7 +564,6 @@
       <li><a href="#identity">정체성</a></li>
       <li><a href="#principle">원리</a></li>
       <li><a href="#programs">프로그램</a></li>
-      <li><a href="#diffusion">사회 확산</a></li>
     </ul>
   </div>
 </nav>
@@ -465,29 +579,8 @@
   </div>
 </div>
 
-<div class="hero-foot">
-  <div class="breath-mark">
-    <span class="breath-dot"></span>
-    <span>의식 — 대상 — 경험 — 새로운 나</span>
-  </div>
-</div>
 
-<!-- Intro right after hero -->
-<section class="intro" style="border-top:none">
-  <div class="container">
-    <div class="section-label">Waum Meditation · 의식이 대상을 만나는 자리</div>
-    <h2>
-      한 잔의 커피, 한 줌의 빛.<br/>
-      삶에서 만나는 작은 아름다움 속에서<br/>
-      <em>나의 삶이 다시 조율되고 있습니다.</em>
-    </h2>
-    <p>
-      와움은 우리 모두의 의식이 매 순간 작동시키는 보편 원리에서 출발합니다.
-      종교나 특정 가르침에 기대지 않고, 누구나 이미 가진 의식 그 자체로
-      매일을 능동적으로 조율하며 살아가는 길.
-    </p>
-  </div>
-</section>
+
 
 <!-- 1. 정체성 -->
 <section id="identity" class="alt">
@@ -523,517 +616,103 @@
 <section id="principle">
   <div class="container">
     <div class="section-label">The Principle · 와움 명상의 원리</div>
-    <h2 class="section-title">와움 명상의 원리 —<br/>삶의 리츄얼, 내면의 나침반</h2>
-
-    <p class="section-sub">
-      와움 명상의 원리는 한 줄에 담깁니다.
-    </p>
+    <h2 class="section-title">명상의 보편적 원리를 한 장의 지도로</h2>
 
     <div class="formula-block">
       <div class="formula">
         <span>의식</span>
-        <span class="plus">+</span>
+        <span class="bracket">[</span>
         <span>대상</span>
+        <span class="bracket">]</span>
         <span class="eq">=</span>
         <span>경험</span>
         <span class="arrow">→</span>
-        <span class="em">새로운 나</span>
+        <span class="em">나</span>
       </div>
-      <div class="formula-note">매 순간 우리 안에서 내적 경험이 일어나고 있는 보편 원리</div>
+      <div class="formula-note">명상이 생활 속 문화가 될 수 있도록</div>
     </div>
 
-    <div class="principle-models">
-
-      <div class="principle-model">
-        <div class="model-num">01</div>
-        <div class="model-content">
-          <h3 class="model-title">인식의 연금술<span class="model-bracket">[ 의식 + 대상 = 경험 ]</span></h3>
-          <p class="model-desc">우리의 모든 주관적 현실이 탄생하는 <em>기초 설계도</em>입니다.</p>
-          <ul class="model-elements">
-            <li>
-              <strong>의식 — 빛</strong>
-              <span>모든 경험의 주체. 무엇이든 비출 수 있으며, 우리 내면에서 끊임없이 뿜어져 나오는 능동적인 에너지입니다.</span>
-            </li>
-            <li>
-              <strong>대상 — 피사체</strong>
-              <span>의식의 빛이 만나는 대상. 숲의 햇살·자신의 호흡 같은 실재부터, 과거의 기억이나 미래의 불안 같은 관념까지 모두 포함됩니다.</span>
-            </li>
-            <li>
-              <strong>경험 — 사건</strong>
-              <span>의식(빛)이 특정 대상(피사체)을 비추는 순간 탄생하는 결과물입니다.</span>
-            </li>
-          </ul>
-          <div class="model-insight">
-            <div class="model-insight-label">핵심 통찰</div>
-            <p>내면에서 일어나는 인식의 과정을 구조적으로 이해하면, 우리는 더 이상 경험에 휩쓸리지 않습니다. 내적 구조를 파악하는 순간, 우리는 경험의 <em>포로</em>에서 벗어나 경험을 <em>관찰</em>하고 <em>선택</em>할 수 있는 진정한 자유를 얻게 됩니다.</p>
-          </div>
-        </div>
+    <!-- 4 핵심 요소: 의식·대상·경험·나 (한 줄 4열) -->
+    <div class="formula-grid">
+      <div class="formula-cell">
+        <div class="term">의식 — 빛</div>
+        <div class="term-en">Consciousness · 주체</div>
+        <p>우리 내면의 <em>빛</em>. 태양이 세상을 비춰 만물을 드러내듯, 의식은 우리의 모든 경험을 드러냅니다.</p>
       </div>
-
-      <div class="principle-model">
-        <div class="model-num">02</div>
-        <div class="model-content">
-          <h3 class="model-title">명상, 나에게로 떠나는 여행<span class="model-bracket">[ 떠남 — 만남 — 되돌아옴 ]</span></h3>
-          <p class="model-desc">일상의 소음에서 벗어나 자신의 몸과 마음을 정교하게 조율하는 리추얼입니다.</p>
-          <ul class="model-elements">
-            <li>
-              <strong>떠남 (Departure)</strong>
-              <span>관계의 울타리와 사회적 역할 속에 갇혀 좁아진 의식을 일상의 좌표 밖으로 이동시키는 단계입니다.</span>
-            </li>
-            <li>
-              <strong>만남 (Encounter)</strong>
-              <span>빛의 생명력이나 숨결 같은 <em>실재</em>를 정면으로 마주합니다. 낡은 지각의 감옥을 깨고 감각의 지평을 넓히는 시간입니다.</span>
-            </li>
-            <li>
-              <strong>되돌아옴 (Return)</strong>
-              <span>확장되었던 의식이 다시 <em>나</em>라는 본질로 수렴됩니다. 나의 본질과 하나가 된 감각을 품은 채, 가장 맑고 평화로운 순수 의식의 상태로 머뭅니다.</span>
-            </li>
-          </ul>
-          <div class="model-insight">
-            <div class="model-insight-label">핵심 통찰</div>
-            <p>여정의 끝에서 마주하는 <em>나</em>는 이전과 같은 곳에 서 있지만, 존재의 해상도가 한 겹 더 맑고 넓게 업데이트된 상태입니다. 이것이 와움이 지향하는 <em>존재의 진화</em>입니다.</p>
-          </div>
-        </div>
+      <div class="formula-cell">
+        <div class="term">대상 — 피사체</div>
+        <div class="term-en">Object · 객체</div>
+        <p>의식의 빛이 머무는 곳. 햇살·호흡 같은 <em>실재</em>부터 기억·불안 같은 <em>관념</em>까지 모두 포함됩니다.</p>
       </div>
-
-      <div class="principle-model">
-        <div class="model-num">03</div>
-        <div class="model-content">
-          <h3 class="model-title">해방과 재창조 모델<span class="model-bracket">[ 분리 → 디자인 → 회복 ]</span></h3>
-          <p class="model-desc">마음의 관성에서 벗어나 삶의 주도권을 회복하는 구체적인 프로세스입니다.</p>
-          <ul class="model-elements">
-            <li>
-              <strong>분리와 객관화 (Separation)</strong>
-              <span><em>경험하는 나</em>와 <em>경험의 내용</em>을 분리합니다.</span>
-              <em class="model-example">예: "나는 우울하다" → "내 의식(빛)이 지금 우울이라는 대상(피사체)을 비추고 있구나."</em>
-            </li>
-            <li>
-              <strong>능동적 재창조 (Design)</strong>
-              <span>감정에 수동적으로 반응하는 대신, 나의 의식을 어디에 둘지 스스로 결정합니다. 내가 비출 대상을 바꿈으로써 나만의 경험을 직접 디자인합니다.</span>
-            </li>
-            <li>
-              <strong>변하지 않는 중심 (Recovery)</strong>
-              <span>몸·감정·기억은 구름처럼 계속 변하지만, 그것을 비추는 <em>의식</em>은 하늘처럼 변하지 않는다는 사실을 깨닫습니다. 내면의 중심을 찾는 과정입니다.</span>
-            </li>
-          </ul>
-        </div>
+      <div class="formula-cell">
+        <div class="term">경험 — 사건</div>
+        <div class="term-en">Experience · 결과</div>
+        <p>의식이 특정 대상을 품는 — <em>대괄호 [ ]의 순간</em>, 비로소 탄생하는 내적 결과물입니다.</p>
       </div>
-
-    </div>
-
-    <div class="benefits-summary">
-      <h3 class="benefits-title">와움 명상의 사고 모델이 주는 유익</h3>
-      <table class="benefits-table">
-        <tbody>
-          <tr>
-            <td class="benefit-name">자기 지도의 확보</td>
-            <td class="benefit-desc">생각의 미로에서 길을 잃었을 때, 스스로의 위치를 파악하고 제자리로 돌아올 수 있는 <strong>내면의 나침반</strong>이 되어줍니다.</td>
-          </tr>
-          <tr>
-            <td class="benefit-name">주체성 회복</td>
-            <td class="benefit-desc">외부 환경이나 감정에 휘둘리는 수동적 관찰자를 넘어, 자신의 현실을 직접 빚어내는 <strong>경험의 창조자</strong>로 거듭나게 합니다.</td>
-          </tr>
-          <tr>
-            <td class="benefit-name">삶의 리추얼</td>
-            <td class="benefit-desc">종교적 믿음이나 스승의 권위에 의존하지 않고, 보편적인 원리를 통해 스스로 몸과 마음을 조율하는 <strong>현대인의 생존 기술</strong>입니다.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-  </div>
-</section>
-
-<!-- 3. 5단계 — 학술 이론명 없음 -->
-<section id="stages" class="alt">
-  <div class="container">
-    <div class="section-label">Five Stages · 단편 명상의 다섯 단계</div>
-    <h2 class="section-title">하나의 와움 명상은,<br/>다섯 단계의 작은 여정을 거칩니다.</h2>
-
-    <div class="stages-intro">
-      <div class="stages-intro-image">
-        <img src="inner.jpg" alt="와움 명상 — 내면의 여행" />
-      </div>
-      <div class="stages-intro-quote">
-        <span class="mark">“</span>나는 편안함 속에서<br/>
-        내면의 여행을 하고 있습니다.
+      <div class="formula-cell">
+        <div class="term">나 — 종착지</div>
+        <div class="term-en">The Self · 두 가지 얼굴</div>
+        <p>경험을 나로 <em>동일시하는 나</em>, 그리고 그 경험에서 <em>벗어나 깨달은 나</em>.</p>
       </div>
     </div>
 
-    <div class="stages">
-      <div class="stage">
-        <div class="stage-num">01</div>
-        <div class="stage-content">
-          <h3>편안한 수용 — 외부의 대상을 의식 안으로</h3>
-          <p>의식이 외부의 대상을 의도적으로 정하고, 그 대상이 의식 안으로 자연스럽게 들어오도록 허용합니다. 이완된 의식 안에서, 자극이 나타나는 그대로를 받아들이는 자리입니다.</p>
-        </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-num">02</div>
-        <div class="stage-content">
-          <h3>정박 — 몸의 감각으로 자리잡음</h3>
-          <p>의식이 만난 대상이 추상적 자극으로만 머물지 않게 합니다. 대상의 특성을 신체 감각으로 결합해 <em>지금 여기</em>에 정박시키며, 자율신경의 자연스러운 조절이 함께 일어납니다.</p>
-        </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-num">03</div>
-        <div class="stage-content">
-          <h3>귀환 — 대상에서 의식 자체로</h3>
-          <p>'인식되는 것'에서 '인식하는 자'로 자각의 방향을 180도 돌립니다. 대상을 받아들이던 그 맑은 의식 자체가 곧 나임을 발견하는 와움 명상의 핵심 전환점.</p>
-        </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-num">04</div>
-        <div class="stage-content">
-          <h3>자기 조명 — 의식의 빛을 자기에게</h3>
-          <p>회귀한 의식이 외부의 대상이 아닌 <em>자기 자신</em>을 비춥니다. 사회적 역할과 가면 뒤의 본래의 나를 자애롭게 돌보는, 가장 부드러운 빛으로 자기를 다시 만나는 자리.</p>
-        </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-num">05</div>
-        <div class="stage-content">
-          <h3>복귀 — 새로워진 몸과 마음으로</h3>
-          <p>와움의 두 움직임을 거친 몸과 마음이 다시 일상으로 돌아갑니다. <em>한 겹 더 맑아진 나</em>는 사라지지 않고, 일상의 첫 동작과 함께 자연스럽게 흐릅니다.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. 프로그램 라인업 -->
-<section id="programs">
-  <div class="container">
-    <div class="section-label">Program Lineup · 대상별 프로그램</div>
-    <h2 class="section-title">대상이 바뀌면,<br/>경험과 확장의 결이 달라집니다.</h2>
-    <p class="section-sub">
-      같은 5단 공식 위에서 <strong>대상</strong>만 갈아 끼우면, 다른 와움 명상이 됩니다. 사용자는 하루의 어느 자리에서, 어떤 결의 의식 조율이 필요한지 스스로 선택할 수 있습니다.
-    </p>
-
-    <div class="lineup">
-      <table>
-        <thead>
-          <tr>
-            <th style="width:14%">대상</th>
-            <th style="width:24%">경험의 결</th>
-            <th style="width:28%">확장의 결 (몸 · 마음)</th>
-            <th style="width:34%">의식을 조율하고 싶은 순간</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="target">호흡</td>
-            <td class="exp">살아있음의 리듬</td>
-            <td class="exp">몸의 안정 · 마음의 정돈</td>
-            <td class="moment">발표 전, 결정 직전, 하루를 마무리하는 자리</td>
-          </tr>
-          <tr>
-            <td class="target">빛</td>
-            <td class="exp">따뜻함 · 환함</td>
-            <td class="exp">몸의 활력 · 마음의 환해짐</td>
-            <td class="moment">환한 의식으로 하루를 시작하고 싶은 아침</td>
-          </tr>
-          <tr>
-            <td class="target">소리</td>
-            <td class="exp">공간감 · 진동</td>
-            <td class="exp">긴장의 풀림 · 마음의 여백</td>
-            <td class="moment">의식의 여백을 회복하고 싶은 순간</td>
-          </tr>
-          <tr>
-            <td class="target">온기</td>
-            <td class="exp">안정 · 포근함</td>
-            <td class="exp">몸의 풀림 · 마음의 안전감</td>
-            <td class="moment">자기 안의 따뜻함을 깨우고 싶은 밤</td>
-          </tr>
-          <tr>
-            <td class="target">감정</td>
-            <td class="exp">자기와의 만남</td>
-            <td class="exp">가슴의 풀림 · 마음의 흐름</td>
-            <td class="moment">감정의 흐름을 회복하고 싶을 때</td>
-          </tr>
-          <tr>
-            <td class="target">생각</td>
-            <td class="exp">거리 · 관찰</td>
-            <td class="exp">머리의 풀림 · 마음의 명료함</td>
-            <td class="moment">의식의 명료함이 필요한 새벽</td>
-          </tr>
-          <tr>
-            <td class="target">사람</td>
-            <td class="exp">연결 · 따뜻함</td>
-            <td class="exp">가슴의 따뜻함 · 마음의 연결</td>
-            <td class="moment">그리운 얼굴과 다시 만나고 싶을 때</td>
-          </tr>
-          <tr>
-            <td class="target">풍경</td>
-            <td class="exp">광활 · 고요</td>
-            <td class="exp">몸의 쉼 · 마음의 광활함</td>
-            <td class="moment">시야를 넓히고 싶은 순간</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- ✨ 핵심 통찰 -->
+    <div class="principle-insight">
+      <div class="insight-label">경험을 나라고 믿는 착각에서 벗어나 경험의 주인으로</div>
+      <p>우리는 평생 동안 내가 겪은 '경험'들을 <em>나</em>라고 생각해 왔습니다. 내 의식이 슬픔이라는 대상을 만나 슬픈 경험을 할 때 그것을 나와 동일시하고, 상처나 불안을 경험할 때 그것이 곧 나라고 착각합니다.</p>
+      <p>그러나 이 공식이 보여주는 진짜 비밀은, 우리가 실제라 믿어왔던 그 모든 '나'가 사실은 의식의 빛이 대상을 비추며 만들어낸 <em>찰나의 사건(경험)</em>에 불과하다는 점입니다.</p>
+      <p>이 내적 구조를 명확히 이해하는 순간, 우리는 거친 경험과 나를 동일시하던 관성에서 벗어나게 됩니다. 내가 실제라 믿었던 현실과 나 자신에게 본질적인 의문을 던질 때, 우리는 비로소 <em>경험의 포로</em>에서 벗어납니다. 그리고 그 경험을 자유롭게 관찰하고 선택할 수 있는 선명한 앎의 자리 — 즉 <em>경험의 진짜 주인이자 빛 자체인 진짜 '나'</em>로 깨어나게 됩니다.</p>
     </div>
 
+    <!-- 와움이 돕는 활동 -->
     <p class="pull">
-      대상은 달라도 도착점은 같습니다.<br/>
-      <em>출발의 나가, 새로운 나로 돌아옵니다.</em>
+      와움은 바로 이러한 <em>내면의 깨어남</em>을 돕는 활동을 합니다.
     </p>
+
+    <!-- 마무리 -->
+    <p class="principle-closing">
+      와움은 이 명료한 원리를 바탕으로, 특별한 장소나 시간이 아니더라도 우리의 일상 전체를 명상으로 전환하는 여정을 안내합니다. 숲길을 걷는 한 걸음, 깊게 들이쉬는 한 모금의 숨, 문득 찾아오는 감정의 파도를 알아차리는 그 모든 작은 순간들이 그대로 <em>명상이 되고 깨어남</em>이 됩니다. 삶의 매 순간을 온전한 나의 시간으로 채워갈 수 있도록, 당신의 내면에 <em>선명한 나침반</em>을 세워주는 좋은 프로그램을 정성껏 만들어가고 있습니다.
+    </p>
+
   </div>
 </section>
 
-<!-- 5. 시그니처 프로그램 -->
-<section id="signature" class="alt">
+<!-- 와움 프로그램 소개 -->
+<section id="programs-intro">
   <div class="container">
-    <div class="section-label">Signature Program · 시그니처 프로그램</div>
-    <h2 class="section-title">와움 빛 · 아침<br/>— 의식이 빛을 만나는 자리.</h2>
+    <div class="section-label">Waum Programs · 와움 프로그램</div>
+    <h2 class="section-title">하나의 원리, 다양한 여정.<br/>당신의 일상에 맞는 와움.</h2>
+
     <p class="section-sub">
-      대상별 프로그램이 어떻게 구성되는지를 보여주는 프로토타입. 같은 5단 골격 위에서 빛이라는 대상에 맞춰 가이드 언어가 빚어집니다.
+      와움은 같은 보편 원리 위에서 여러 모습으로 펼쳐집니다. 일상 속 짧은 호흡 한 번에서, 자신을 깊이 만나는 긴 여정까지 — 원하는 자리에서, 원하는 만큼.
     </p>
 
-    <div class="sig">
-      <span class="ribbon">Prototype · 프로토타입</span>
-      <h3>와움 빛 · 아침</h3>
-      <div class="sub">Waum Light · Morning</div>
+    <div class="program-blocks">
 
-      <div class="opening-quote">
-        의식이 깨어 있습니다.<br/>
-        오늘 이 의식이 만날 대상은 빛입니다.<br/>
-        의식이 빛을 만나 일어나는 경험이,<br/>
-        지금의 나를 환한 의식의 나로 데려갈 것입니다.
+      <div class="program-block">
+        <div class="tag">Forest · 숲명상</div>
+        <h3>와움 숲명상</h3>
+        <div class="sub">매주 토요일 · 90분 · 역할 말고, 나로 있는 시간</div>
+        <p>빛과 바람과 나무의 숨에 의식을 얹어, 한 주의 가면을 내려놓고 본래의 나로 돌아오는 정기 숲명상 프로그램.</p>
+        <a href="waum_forest.html" class="link">숲명상 안내 보기 →</a>
       </div>
 
-      <div class="meta">
-        <span>약 7~10분</span>
-        <span>90초 단축본 별도</span>
-        <span>창가 · 빛이 닿는 자리</span>
-        <span>앉거나 선 채</span>
+      <div class="program-block">
+        <div class="tag">Series · 일상 시리즈</div>
+        <h3>와움 일상 명상 시리즈</h3>
+        <div class="sub">호흡 · 소리 · 온기 · 감정 · 생각</div>
+        <p>일상의 다양한 대상을 의식의 빛으로 만나는 짧은 명상 시리즈. 당신의 순간에 맞춰 골라 쓰는 작은 도구들.</p>
       </div>
 
-      <div class="sig-stages">
-
-        <div class="sig-stage">
-          <div class="n">01</div>
-          <div>
-            <h4>빛과의 만남</h4>
-            <p>의식을 빛이라는 대상에 둡니다. 다만 좇지 않고, 빛이 의식의 자리로 찾아오게 둡니다.</p>
-            <div class="ex">"의식은 받는 자리입니다. 무엇이 들어오고 있는지 그대로 경험합니다. 그것이 의식과 빛의 첫 만남입니다."</div>
-          </div>
-        </div>
-
-        <div class="sig-stage">
-          <div class="n">02</div>
-          <div>
-            <h4>빛의 정박</h4>
-            <p>의식의 대상이 된 빛이 이제 몸으로 내려앉습니다. 시각이 아닌 몸의 감각으로 의식 안에 자리잡는 자리.</p>
-            <div class="ex">"이마와 광대뼈에 닿는 따뜻함을 알아차립니다. 의식과 빛이 만나서 만든 첫 몸의 경험입니다. 그 사실을 경험합니다."</div>
-          </div>
-        </div>
-
-        <div class="sig-stage">
-          <div class="n">03</div>
-          <div>
-            <h4>주체로의 귀환</h4>
-            <p>의식을 빛에서, 그 빛을 자각하는 의식 자체로 돌립니다. 와움 명상의 핵심 전환점.</p>
-            <div class="ex">"의식을 빛에서 그 빛을 자각하는 의식 자체로 돌립니다. 그리고 순수한 의식 자체를 경험합니다. 당신은 순수한 빛과 같은 의식입니다. 그 사실을 경험합니다."</div>
-          </div>
-        </div>
-
-        <div class="sig-stage">
-          <div class="n">04</div>
-          <div>
-            <h4>본래의 환함</h4>
-            <p>외부의 빛은 대상이었습니다. 그러나 의식 자체가 빛입니다. 그 의식의 빛을 자기 자신에게로 돌립니다.</p>
-            <div class="ex">"의식의 빛은 광원입니다. 이 광원이 된 의식을 본래의 나에게 비춥니다. 당신은 자신을 비추는 의식의 빛입니다. 그 사실을 경험합니다."</div>
-          </div>
-        </div>
-
-        <div class="sig-stage">
-          <div class="n">05</div>
-          <div>
-            <h4>빛의 연장</h4>
-            <p>의식과 빛의 만남이 만든 경험은 새로운 의식이 되어 당신 안에 남고, 일상의 첫 동작으로 함께 옮겨갑니다.</p>
-            <div class="ex">"명상은 끝나지 않고, 대상이 바뀔 뿐입니다. 같은 의식이 다음 대상을 만나며 경험은 끊기지 않고 이어집니다. 그 사실을 경험합니다."</div>
-          </div>
-        </div>
-
-      </div>
     </div>
   </div>
 </section>
 
-<!-- 6. 사회 확산 -->
-<section id="diffusion">
+<!-- 6. 클로징 사인 — 페이지의 마지막 한 줄 -->
+<section id="closing" class="alt" style="padding:96px 0;">
   <div class="container">
-    <div class="section-label">Diffusion Strategy · 사회 확산 전략</div>
-    <h2 class="section-title">한 사람의 의식 조율이,<br/>한 사회의 호흡이 되도록.</h2>
-    <p class="section-sub">
-      와움의 확산은 '바이럴'이 아니라 '뿌리내림'의 비유로 설계됩니다. 개인이 매일 자기 의식을 조율하는 도구로 시작해, 조직과 학교, 공공·지역사회로 옮겨가는 3년의 단계별 로드맵.
-    </p>
-
-    <div class="roadmap">
-
-      <div class="roadmap-item">
-        <div class="roadmap-marker">Y1</div>
-        <div class="roadmap-content">
-          <div class="yr">2026 · 씨앗기 (Seed)</div>
-          <h3>“가장 작은 진입점을 만든다.”</h3>
-          <p class="goal">와움 공식과 단편 명상이 누구나 자기 일상에서 시도해볼 수 있도록, 무료 콘텐츠와 첫 파일럿을 통해 효능을 데이터로 증명한다.</p>
-          <ul>
-            <li>대상별 단편 명상 콘텐츠 100편 제작 (유튜브 쇼츠 · 인스타 릴스 · 브런치)</li>
-            <li>모바일 MVP 출시 — 의식 조율 일지 + 단편 명상 카드 → 누적 5만 명</li>
-            <li>기업 임직원 의식 조율 워크숍 베타 5개 기업 (스타트업·중견·대기업)</li>
-            <li>대학 학생자치 협력 시범 3곳 — 학생들이 직접 운영하는 와움 동아리</li>
-            <li>학술 자문단 구성 (내부 설계 근거)</li>
-            <li>도심 와움 스페이스 1호점 (서울)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="roadmap-item">
-        <div class="roadmap-marker">Y2</div>
-        <div class="roadmap-content">
-          <div class="yr">2027 · 뿌리내리기 (Root)</div>
-          <h3>“증거 위에서 정규 채널로.”</h3>
-          <p class="goal">파일럿 데이터를 근거로, 기업·대학의 정규 라인업에 와움이 자기 의식 조율 도구로 자리잡는다.</p>
-          <ul>
-            <li>기업 임직원 자기 조율 프로그램 → 30개 기업 정규 도입</li>
-            <li>EAP(임직원지원프로그램) 공식 벤더 등록 (2~3개 EAP사)</li>
-            <li>대학 학생상담센터 5곳 MOU + 청년재단 협력</li>
-            <li>도서 출간 〈와움 — 한 줄의 공식, 한 호흡의 명상〉</li>
-            <li>팟캐스트 〈와움 라디오〉 매주 — 사용자의 의식 조율 일지 인터뷰</li>
-            <li>와움 스페이스 2~3호점 (강남·판교·부산 검토) · 누적 30만 명</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="roadmap-item">
-        <div class="roadmap-marker">Y3</div>
-        <div class="roadmap-content">
-          <div class="yr">2028 · 퍼져나가기 (Bloom)</div>
-          <h3>“공공의 인프라로 자리잡는다.”</h3>
-          <p class="goal">민간 브랜드를 넘어, 보건소·복지관·학교 정규 교과까지 ‘공공의 의식 조율 도구’로 자리 잡는다.</p>
-          <ul>
-            <li>지역사회 클래스 100곳 (보건소 · 복지관 · 청년센터 · 도서관)</li>
-            <li>학교 정규 교과 연계 (시·도 교육청 협력) — 자기 인식 교육 모듈</li>
-            <li>공공 정신건강 정책 자문 · 자기 조율 가이드라인 공동 발간</li>
-            <li>글로벌 영문판 콘텐츠 시작 — 〈WAUM: A Universal Formula〉</li>
-            <li>누적 100만 명 · 일일 와움 단편 명상 완료 10만 회 / 일</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <h3 class="section-title" style="font-size:28px;margin-top:96px">파트너십 · 6개 채널</h3>
-    <div class="partners">
-      <div class="partner">
-        <h4>B2B · HR · EAP</h4>
-        <p>인사·HRD·EAP 부서. 임직원이 능동적으로 자기 의식을 조율하는 일상 도구로 4주 프로그램을 정규 복지로 도입.</p>
-      </div>
-      <div class="partner">
-        <h4>공공 · 교육</h4>
-        <p>시·도 교육청, 청년재단, 정신건강복지센터. 무료/저가 라이선스로 진입해 학교·지역의 자기 인식 인프라가 된다.</p>
-      </div>
-      <div class="partner">
-        <h4>의료 · 심리</h4>
-        <p>정신건강의학과·심리상담센터의 보완 도구. 처방이 아닌 자기 조율 도구로, 진료실 옆에 함께 놓이도록.</p>
-      </div>
-      <div class="partner">
-        <h4>전통 · 학술</h4>
-        <p>한국 전통 명상 전문가와 인지·심리학 연구자. 이론은 구조의 뼈대로 들어가되, 표면에는 권위로 드러나지 않는다.</p>
-      </div>
-      <div class="partner">
-        <h4>콘텐츠 · 라이프스타일</h4>
-        <p>출판사·OTT·웰니스 브랜드. 호텔 객실의 ‘의식 조율 카드’, 카페의 ‘90초 와움 코너’ 등 일상 접점에 깃든다.</p>
-      </div>
-      <div class="partner">
-        <h4>커뮤니티</h4>
-        <p>주체적인 자기 삶을 추구하는 사람들의 자발적 모임. 마케팅이 아닌 ‘옆자리에서 같이 의식을 조율하기’의 형태.</p>
-      </div>
-    </div>
-
-    <h3 class="section-title" style="font-size:28px;margin-top:96px">차별화 · 와움이 다른 이유</h3>
-    <div class="diffs">
-      <div class="diff">
-        <span class="num">01</span>
-        <h4>한 줄의 보편 공식</h4>
-        <p>특정 가르침이나 인물에 의지하지 않고, <strong>의식 + 대상 = 경험</strong>이라는 모두에게 내재된 보편 원리에서 출발합니다. 따라할 자격이 없는 사람이 없습니다.</p>
-      </div>
-      <div class="diff">
-        <span class="num">02</span>
-        <h4>한국말로 푼 명상</h4>
-        <p>영어 번역체가 아닌, <strong>한국인의 정서·언어·리듬</strong>으로 새로 쓴 가이드. 와움이라는 이름 자체가 곧 그 언어의 시작입니다.</p>
-      </div>
-      <div class="diff">
-        <span class="num">03</span>
-        <h4>모든 대상이 명상의 입구</h4>
-        <p>호흡뿐 아니라 빛·소리·온기·감정·생각·사람·풍경 — <strong>일상에서 만나는 무엇이든</strong> 의식의 대상이 될 수 있습니다. 진입의 자리가 24시간 열려있습니다.</p>
-      </div>
-      <div class="diff">
-        <span class="num">04</span>
-        <h4>스스로 확인하는 신뢰</h4>
-        <p>와움의 모든 단계는 인간 의식이 작동하는 <strong>보편 원리</strong>에 뿌리를 두고 있습니다. 권위로 증명하는 것이 아니라, <strong>자기 의식으로 직접 확인할 수 있는</strong> 신뢰입니다.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. 측정 -->
-<section id="kpi" class="alt">
-  <div class="container">
-    <div class="section-label">Outcomes · 측정 지표</div>
-    <h2 class="section-title">조율은 느낌이 아니라,<br/>측정 가능한 변화입니다.</h2>
-    <p class="section-sub">
-      와움은 ‘기분이 좋아졌다’ 수준에 머물지 않습니다. 기업·학교 도입 시 사전·사후 척도(자기효능감, 정서 조절, 수면, 지각된 스트레스)를 측정하고, 개인 사용자에게는 자율신경 변동성(HRV)·수면 데이터를 옵트인으로 연결합니다.
-    </p>
-    <div class="kpi-grid">
-      <div class="kpi">
-        <div class="label">3년 누적 사용자</div>
-        <div class="val">100만</div>
-        <div class="desc">와움 단편 명상을 1회 이상 완주한 누적 인원</div>
-      </div>
-      <div class="kpi">
-        <div class="label">일일 의식 조율</div>
-        <div class="val">10만 / 일</div>
-        <div class="desc">매일 자기 의식을 조율하는 사람의 수</div>
-      </div>
-      <div class="kpi">
-        <div class="label">기업 도입</div>
-        <div class="val">100곳</div>
-        <div class="desc">와움 4주 정규 도입 · 임직원 NPS 50+</div>
-      </div>
-      <div class="kpi">
-        <div class="label">청년 도달</div>
-        <div class="val">대학 30곳</div>
-        <div class="desc">학생상담센터 정식 협력 + 시범학교 50</div>
-      </div>
-      <div class="kpi">
-        <div class="label">자기효능감</div>
-        <div class="val">+25%</div>
-        <div class="desc">4주 프로그램 사전·사후 평균 증가 목표</div>
-      </div>
-      <div class="kpi">
-        <div class="label">정서 조절 능력</div>
-        <div class="val">+20%</div>
-        <div class="desc">4주 후 자기 보고 척도 기준 향상</div>
-      </div>
-      <div class="kpi">
-        <div class="label">수면의 질</div>
-        <div class="val">+1.5점</div>
-        <div class="desc">와움 슬립 시리즈 8주 사용자 평균 개선</div>
-      </div>
-      <div class="kpi">
-        <div class="label">공공 도달</div>
-        <div class="val">100곳</div>
-        <div class="desc">보건소·복지관·청년센터 정기 클래스</div>
-      </div>
-    </div>
-
-    <p class="pull">
-      “회복은 숫자가 아닙니다.<br/>
-      다만 <em>얼마나 많은 사람이 자기 의식의 주인이 되었는지</em>는 셀 수 있습니다.”
+    <p class="closing-sign" style="margin:0 auto;">
+      와.움 — 모든 순간의 기쁨, 모든 순간의 깨달음.
     </p>
   </div>
 </section>
@@ -1043,25 +722,16 @@
     <div class="row">
       <div class="brand-blk">
         <div class="b">와움<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--moss);margin:0 8px;vertical-align:middle"></span>WAUM</div>
-        <p>매일을 조율하는 가장 단순한 의식 명상.<br/>의식이 대상을 만나는 모든 자리에서.</p>
+        <p>명상이 생활 속 문화가 될 수 있도록.<br/>모든 순간의 기쁨, 모든 순간의 깨달음.</p>
         <div style="margin-top:20px">
           <span class="chip">Identity</span>
-          <span class="chip">Formula</span>
-          <span class="chip">5 Stages</span>
-          <span class="chip">Lineup</span>
-          <span class="chip">Diffusion</span>
+          <span class="chip">Principle</span>
+          <span class="chip">Programs</span>
         </div>
-      </div>
-      <div>
-        <p style="font-size:13px;color:var(--ink-soft);line-height:1.8;font-weight:300">
-          본 문서는 와움 명상의 정체성, 명상 공식,<br/>
-          5단 프로그램 구조, 시그니처 프로그램, 그리고<br/>
-          사회 확산 전략을 통합한 단일 페이지 기획안입니다.
-        </p>
       </div>
     </div>
     <div class="meta">
-      © 와움 명상 · 통합 기획 · 본 문서는 정체성·공식·프로그램·확산 전략을 한 장에 묶은 통합 기획안입니다.
+      © 와움 명상 · WAUM
     </div>
   </div>
 </footer>
