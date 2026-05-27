@@ -33,7 +33,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* 진행 표시 */
   .progress {
     position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
     display: flex; gap: 7px; z-index: 50;
@@ -42,7 +41,6 @@
   .progress .dot.active { background: var(--moss); width: 18px; border-radius: 3px; }
   .progress .dot.done { background: var(--sage); }
 
-  /* 챕터 표시 */
   .chapter-tag {
     display: inline-block; padding: 4px 10px; font-size: 11px;
     background: var(--moss); color: white;
@@ -115,7 +113,6 @@
     .intro-hero .hero-subtitle { font-size: 13px; }
   }
 
-  /* 뷰 */
   main {
     min-height: 100vh; display: flex; align-items: center; justify-content: center;
     padding: 80px 24px 60px;
@@ -127,14 +124,12 @@
   .view.active { display: block; }
   @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* 타이포 */
   h1.title { font-size: 26px; font-weight: 500; line-height: 1.5; margin-bottom: 20px; }
   h2.step-title { font-size: 20px; font-weight: 500; line-height: 1.5; margin-bottom: 8px; }
   .step-sub { font-size: 14px; color: var(--text-soft); margin-bottom: 32px; line-height: 1.7; }
   .intro-body { font-size: 15px; color: var(--text-soft); line-height: 1.85; margin-bottom: 40px; }
   .intro-body p + p { margin-top: 14px; }
 
-  /* 버튼 */
   .btn-row { display: flex; justify-content: flex-end; gap: 10px; margin-top: 36px; }
   .btn {
     font-family: inherit; font-size: 14px; padding: 12px 28px;
@@ -146,7 +141,6 @@
   .btn.ghost { background: transparent; color: var(--text-soft); border-color: var(--line); }
   .btn.ghost:hover { border-color: var(--moss); color: var(--moss); background: transparent; }
 
-  /* 자연 영역 선택 (3장 카드) */
   .zone-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
   .zone {
     cursor: pointer; padding: 20px;
@@ -159,7 +153,6 @@
   .zone-text h3 { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
   .zone-text p { font-size: 13px; color: var(--text-soft); line-height: 1.6; }
 
-  /* 대상 선택 */
   .object-section { margin-bottom: 24px; }
   .object-section-label { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
   .object-chips { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -176,7 +169,6 @@
   }
   .object-input:focus { outline: none; border-color: var(--moss); }
 
-  /* 결과 — 신체 + 원소 정보 */
   .result-wrap {
     display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start;
   }
@@ -201,7 +193,6 @@
   }
   .info-text { font-size: 13px; color: var(--text); line-height: 1.7; }
 
-  /* 실천법 선택 */
   .practice-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
   .practice-option {
     cursor: pointer; padding: 18px 22px;
@@ -218,7 +209,6 @@
   .practice-text h3 { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
   .practice-text p { font-size: 12px; color: var(--text-soft); line-height: 1.6; }
 
-  /* 실천법 결과 */
   .practice-result { background: var(--paper); border: 1px solid var(--line); padding: 28px 24px; }
   .practice-result-header {
     margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line);
@@ -240,13 +230,6 @@
     padding-top: 12px; border-top: 1px solid var(--line); margin-top: 16px;
   }
   .practice-detail h4 + p { margin-top: 0; color: var(--text-soft); }
-
-  /* 푸터 (소스) */
-  .sources {
-    margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line);
-    font-size: 11px; color: var(--text-muted); line-height: 1.7;
-  }
-  .sources a { color: var(--text-muted); }
 
   @media (max-width: 520px) {
     main { padding: 70px 18px 40px; }
@@ -280,8 +263,8 @@
     </div>
     <div class="intro-body">
       <p>거대한 숲과 우리의 몸은 놀랍도록 닮아 있습니다. 요가 철학에서는 자연과 인간 모두가 다섯 가지 원소 — <strong style="color:var(--text);font-weight:500;">흙·물·불·공기·공간</strong> — 으로 이루어져 있다고 말합니다.</p>
-      <p>오늘 이 숲을 거닐며 유독 당신의 마음이 머무는 풍경은 어디인가요? 자연에 투사된 나의 끌림과 신체의 감각을 따라가다 보면, 내가 타고난 <strong style="color:var(--text);font-weight:500;">나만의 '기질(결)'</strong>을 선명하게 만나게 됩니다.</p>
-      <p>숲을 거울 삼아 지금 내 안의 원소들이 보내는 신호를 읽어보세요. 나의 기질을 발견하는 것을 넘어, 흐트러진 몸과 마음을 다시 조화롭게 조율하는 당신만의 숲 명상법을 찾아드립니다.</p>
+      <p>오늘 이 숲을 거닐며 유독 당신의 마음이 머무는 풍경은 어디인가요? 자연에 투사된 나의 끌림과 신체의 감각을 따라가다 보면, 내가 타고난 <strong style="color:var(--text);font-weight:500;">나만의 '기질'</strong>을 선명하게 만나게 됩니다.</p>
+      <p>숲을 거울 삼아 지금 내 안의 원소들이 보내는 신호를 읽어보세요. 나의 기질을 발견하는 것을 넘어, 흐트러진 몸과 마음을 다시 조화롭게 조율하는 당신만의 숲 명상법을 알려드립니다.</p>
       <p style="color: var(--text-muted); font-size: 13px;">소요 시간: 약 5분</p>
     </div>
     <div class="btn-row">
@@ -325,17 +308,17 @@
     </div>
   </section>
 
-  <!-- ───────── 3. [1장] 결과 — 활성 원소 + 신체 도식 ───────── -->
+  <!-- ───────── 3. [1장] 결과 — 지배 원소 + 신체 도식 ───────── -->
   <section class="view" data-step="3">
     <span class="chapter-tag">1장 · 결과</span>
-    <h2 class="step-title">지금 활성화된 원소</h2>
+    <h2 class="step-title">나의 지배 원소</h2>
     <p class="step-sub" id="result-sub">당신이 고른 대상이 가리키는 원소와, 그 원소가 머무는 몸의 자리입니다.</p>
 
     <div class="result-wrap">
       <div class="body-diagram" id="body-diagram"></div>
       <div class="element-info">
         <div class="element-header">
-          <div class="element-tag">활성 원소</div>
+          <div class="element-tag">지배 원소</div>
           <div class="element-name"><span id="el-name">—</span><small id="el-sanskrit">—</small></div>
         </div>
         <div class="info-row">
@@ -382,7 +365,7 @@
         </div>
         <div class="practice-text">
           <h3>숲 명상</h3>
-          <p>오감으로 자연과 공명하는 명상 (와움 권장)</p>
+          <p>오감으로 자연과 공명하는 명상</p>
         </div>
       </div>
       <div class="practice-option" data-type="asana">
@@ -428,9 +411,6 @@
 </main>
 
 <script>
-/* ═══════════════════════════════════════════════════════════════
-   원소 데이터
-═══════════════════════════════════════════════════════════════ */
 const ELEMENTS = {
   earth: {
     name: '흙', sanskrit: 'PRITHVI', color: '#a89878',
@@ -481,9 +461,6 @@ const ELEMENTS = {
 
 const EL_KEYS = ['earth','water','fire','air','space'];
 
-/* ═══════════════════════════════════════════════════════════════
-   3개 영역 (하늘·중간·땅) + 영역별 대상 매핑
-═══════════════════════════════════════════════════════════════ */
 const ZONES = [
   {
     key: 'sky', label: '하늘', desc: '구름, 해, 별, 빈 하늘',
@@ -542,7 +519,6 @@ const ZONES = [
   }
 ];
 
-/* 키워드 매핑 (자유입력 분석용) */
 const KEYWORD_MAP = {
   earth: ['흙','땅','바위','돌','산','뿌리','풀','이끼','지면','대지','나무','줄기','꽃밭'],
   water: ['물','시냇','강','호수','바다','폭포','비','이슬','연못','물줄기','계곡'],
@@ -551,9 +527,6 @@ const KEYWORD_MAP = {
   space: ['하늘','별','달','우주','빈','광활','여백','침묵']
 };
 
-/* ═══════════════════════════════════════════════════════════════
-   원소별 실천법 (명상·아사나·호흡)
-═══════════════════════════════════════════════════════════════ */
 const PRACTICES = {
   earth: {
     meditation: {
@@ -572,18 +545,6 @@ const PRACTICES = {
       sub: '몸을 땅에 뿌리내리는 기본 아사나',
       detail: `<p><strong>타다아사나 (산 자세).</strong> 두 발을 골반 너비로 벌리고 섭니다. 발바닥 네 모서리에 무게가 고르게 실리도록 합니다. 정수리는 위로, 어깨는 아래로 내립니다. 척추가 산처럼 곧게 서는 감각을 1-2분 유지합니다.</p>
         <p><strong>브릭샤아사나 (나무 자세).</strong> 한 발에 무게를 옮기고 다른 발 발바닥을 종아리나 허벅지 안쪽에 댑니다. 두 손은 가슴 앞에서 모으거나 머리 위로 뻗습니다. 시선은 한 점에 고정합니다. 좌우 각 30초-1분.</p>`
-    },
-    breath: {
-      name: '깊은 복식호흡 (Dirga Pranayama)',
-      sub: '하단전에 안정감을 채우는 호흡',
-      detail: `<p><strong>방법.</strong> 한 손은 가슴, 한 손은 아랫배에 놓습니다.</p>
-        <ol>
-          <li>4초간 아랫배가 부풀어오르도록 깊이 들이쉽니다.</li>
-          <li>2초간 호흡을 멈춥니다.</li>
-          <li>6초간 아랫배를 부드럽게 안으로 당기며 천천히 내쉽니다.</li>
-          <li>이 흐름을 8-10회 반복합니다.</li>
-        </ol>
-        <p>호흡이 길어질수록 부교감신경이 활성화되며 흙 원소의 안정감이 깊어집니다.</p>`
     }
   },
   water: {
@@ -604,18 +565,6 @@ const PRACTICES = {
       detail: `<p><strong>나비 자세 (Baddha Konasana).</strong> 앉아서 양 발바닥을 마주 붙이고 두 손으로 발을 감쌉니다. 무릎이 자연스럽게 옆으로 내려가게 둡니다. 척추를 길게 세우고 1-2분 머뭅니다.</p>
         <p><strong>비둘기 자세 (Eka Pada Rajakapotasana).</strong> 한 다리는 앞쪽으로 90도 접고, 다른 다리는 뒤로 길게 뻗습니다. 골반의 무게를 부드럽게 내리고 상체를 천천히 앞으로 숙입니다. 좌우 각 1-2분.</p>
         <p>골반이 풀리면 감정의 흐름도 함께 풀립니다.</p>`
-    },
-    breath: {
-      name: '시탈리 · 나디 쇼다나',
-      sub: '시원하게 식히고 좌우를 균형 잡는 호흡',
-      detail: `<p><strong>시탈리 (Sheetali, 냉각 호흡).</strong></p>
-        <ol>
-          <li>혀를 빨대처럼 말아 입 바깥으로 살짝 내밉니다.</li>
-          <li>혀를 통해 시원하게 들이쉽니다.</li>
-          <li>입을 닫고 코로 천천히 내쉽니다.</li>
-          <li>8-10회 반복합니다. 몸의 열을 식히고 감정을 가라앉힙니다.</li>
-        </ol>
-        <p><strong>나디 쇼다나 (Nadi Shodhana, 교대 콧구멍 호흡).</strong> 엄지로 오른쪽 콧구멍을 막고 왼쪽으로 들이쉬기 → 약지로 왼쪽을 막고 오른쪽으로 내쉬기 → 오른쪽으로 들이쉬기 → 왼쪽으로 내쉬기. 이 한 사이클을 5-10번 반복합니다.</p>`
     }
   },
   fire: {
@@ -640,18 +589,6 @@ const PRACTICES = {
           <li>위로 뻗기 → 합장</li>
         </ol>
         <p>아침 햇빛 아래 5-12회 반복하면 신진대사와 의지의 불이 동시에 깨어납니다.</p>`
-    },
-    breath: {
-      name: '카팔라바티 (Kapalabhati, 정화 호흡)',
-      sub: '복부의 불을 일으키는 강렬한 호흡',
-      detail: `<p><strong>방법.</strong> 척추를 곧게 세우고 앉습니다.</p>
-        <ol>
-          <li>코로 짧고 강하게 내쉬며, 동시에 아랫배를 안으로 빠르게 당깁니다.</li>
-          <li>들숨은 의식하지 않습니다 — 자연스럽게 일어납니다.</li>
-          <li>1초에 1번 정도의 속도로 20-30회를 한 라운드로 합니다.</li>
-          <li>라운드 끝나면 자연 호흡으로 30초 쉽니다. 2-3 라운드 반복.</li>
-        </ol>
-        <p style="color: var(--text-muted); font-size: 12px;">고혈압·심장질환·생리 중·임신 중에는 피하세요.</p>`
     }
   },
   air: {
@@ -670,18 +607,6 @@ const PRACTICES = {
       detail: `<p><strong>우스트라사나 (Ustrasana, 낙타 자세).</strong> 무릎으로 서서 손을 발뒤꿈치에 댑니다. 가슴을 천장 쪽으로 열고 머리를 부드럽게 뒤로 떨어뜨립니다. 호흡이 가슴 안에 가득 차도록 30초-1분 머뭅니다.</p>
         <p><strong>부장가사나 (Bhujangasana, 코브라 자세).</strong> 엎드린 자세에서 두 손을 가슴 옆에 두고, 흡기로 가슴을 들어올립니다. 어깨는 귀에서 멀리, 시선은 앞으로. 호흡 5-10회.</p>
         <p>가슴이 열리면 답답함이 풀리고 공기가 자유롭게 흐릅니다.</p>`
-    },
-    breath: {
-      name: '아눌롬-빌롬 · 브라마리',
-      sub: '신경계를 가다듬는 두 가지 호흡',
-      detail: `<p><strong>아눌롬-빌롬 (Anulom-Vilom).</strong> 콧구멍 교대 호흡. 오른쪽 막고 왼쪽으로 들이쉬기 → 왼쪽 막고 오른쪽으로 내쉬기 → 오른쪽으로 들이쉬기 → 왼쪽으로 내쉬기. 한 사이클을 10회.</p>
-        <p><strong>브라마리 (Bhramari, 벌 소리 호흡).</strong></p>
-        <ol>
-          <li>두 엄지로 양쪽 귀를 부드럽게 막습니다.</li>
-          <li>코로 깊이 들이쉽니다.</li>
-          <li>입을 닫은 채 내쉴 때 "음~" 하고 벌 소리를 냅니다.</li>
-          <li>5-10회 반복. 머리와 가슴이 진동으로 채워집니다.</li>
-        </ol>`
     }
   },
   space: {
@@ -700,38 +625,20 @@ const PRACTICES = {
       detail: `<p><strong>사바사나 (Savasana, 송장 자세).</strong> 등을 대고 누워 팔과 다리를 자연스럽게 벌립니다. 모든 근육의 긴장을 의식적으로 풀어줍니다. 의식만 남기고 몸을 완전히 놓아둡니다. 10-15분.</p>
         <p><strong>시르사사나 (Sirsasana, 머리서기).</strong> 숙련된 분께 권합니다. 정수리 자리의 차크라(사하스라라)를 깨우는 자세로, 의식의 광활함이 열립니다. 초보자는 벽 가까이 또는 지도자 앞에서.</p>
         <p>둘 다 '하지 않음'을 통해 공간(아카샤)을 만들어내는 자세입니다.</p>`
-    },
-    breath: {
-      name: '우자이 (Ujjayi, 승리의 호흡)',
-      sub: '목 차크라를 깨우는 소리 있는 호흡',
-      detail: `<p><strong>방법.</strong></p>
-        <ol>
-          <li>목 안쪽(성문)을 살짝 조이는 느낌으로 호흡합니다.</li>
-          <li>마치 거울에 김을 불어 닦는 것처럼, 입을 다물고 코로 호흡합니다.</li>
-          <li>들숨과 날숨에서 부드러운 "쉬~" 소리가 목 안에서 납니다.</li>
-          <li>4초 들이쉬고 4초 내쉬는 균등한 호흡을 5-10분 이어갑니다.</li>
-        </ol>
-        <p>목(비슛다 차크라)이 깨어나며, 공간 원소가 활성화됩니다.</p>`
     }
   }
 };
 
-/* ═══════════════════════════════════════════════════════════════
-   상태
-═══════════════════════════════════════════════════════════════ */
 const STATE = {
   step: 0,
   zone: null,
-  object: null,    // 텍스트
-  element: null,   // 매핑된 원소 키
+  object: null,
+  element: null,
   practiceType: null,
 };
 
 const TOTAL_STEPS = 6;
 
-/* ═══════════════════════════════════════════════════════════════
-   네비게이션
-═══════════════════════════════════════════════════════════════ */
 function go(n) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.querySelector(`.view[data-step="${n}"]`).classList.add('active');
@@ -748,9 +655,6 @@ function updateProgress() {
   });
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   영역 카드 렌더
-═══════════════════════════════════════════════════════════════ */
 function renderZones() {
   const grid = document.getElementById('zone-grid');
   grid.innerHTML = '';
@@ -769,9 +673,6 @@ function renderZones() {
   });
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   대상 칩 렌더
-═══════════════════════════════════════════════════════════════ */
 function renderObjects() {
   const zone = ZONES.find(z => z.key === STATE.zone);
   document.getElementById('object-title').textContent =
@@ -822,18 +723,13 @@ function matchKeywordToElement(text) {
 }
 
 function guessByZone(zoneKey) {
-  // 키워드 매칭 안 될 때 영역 기본값
   if (zoneKey === 'sky') return 'air';
   if (zoneKey === 'middle') return 'air';
   if (zoneKey === 'ground') return 'earth';
   return 'earth';
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   결과 계산 + 신체 도식 + 원소 정보 표시
-═══════════════════════════════════════════════════════════════ */
 function computeElement() {
-  // 이미 STATE.element 세팅됨
   renderBodyDiagram(STATE.element);
   renderElementInfo(STATE.element);
   document.getElementById('result-sub').textContent =
@@ -841,7 +737,6 @@ function computeElement() {
 }
 
 function renderBodyDiagram(activeEl) {
-  // 5 차크라/원소 위치 (y 좌표)
   const positions = {
     space:  { y: 60,  label: '목·머리' },
     air:    { y: 130, label: '가슴' },
@@ -853,7 +748,6 @@ function renderBodyDiagram(activeEl) {
   const wrap = document.getElementById('body-diagram');
   let html = `<svg viewBox="0 0 220 360" xmlns="http://www.w3.org/2000/svg">`;
 
-  // 사람 실루엣
   html += `
     <circle cx="110" cy="50" r="22" fill="none" stroke="#5a5a4a" stroke-width="1.4"/>
     <line x1="110" y1="72" x2="110" y2="90" stroke="#5a5a4a" stroke-width="1.4"/>
@@ -864,13 +758,11 @@ function renderBodyDiagram(activeEl) {
     <line x1="112" y1="320" x2="128" y2="320" stroke="#5a5a4a" stroke-width="2.2"/>
   `;
 
-  // 5 원소 차크라 위치
   EL_KEYS.forEach(el => {
     const p = positions[el];
     const color = ELEMENTS[el].color;
     const isActive = el === activeEl;
     if (isActive) {
-      // 활성: 큰 글로우 링
       html += `<circle cx="110" cy="${p.y}" r="22" fill="${color}" fill-opacity="0.12" stroke="${color}" stroke-width="1" stroke-dasharray="2 3"/>`;
       html += `<circle cx="110" cy="${p.y}" r="9" fill="${color}" fill-opacity="0.85"/>`;
       html += `<text x="155" y="${p.y+4}" font-family="Noto Sans KR" font-size="12" font-weight="500" fill="${color}" letter-spacing="0.05em">${ELEMENTS[el].name}</text>`;
@@ -896,9 +788,6 @@ function renderElementInfo(elKey) {
   document.getElementById('el-name-2').textContent = el.name;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   실천법 선택 & 결과
-═══════════════════════════════════════════════════════════════ */
 function bindPracticeOptions() {
   document.querySelectorAll('.practice-option').forEach(opt => {
     opt.onclick = () => {
@@ -915,7 +804,7 @@ function renderPractice() {
   const type = STATE.practiceType;
   const p = PRACTICES[elKey][type];
   const elName = ELEMENTS[elKey].name;
-  const typeLabel = { meditation:'숲 명상', asana:'요가 아사나', breath:'호흡법' }[type];
+  const typeLabel = { meditation:'숲 명상', asana:'요가 아사나' }[type];
 
   document.getElementById('practice-title').textContent = `${elName} 원소를 위한 ${typeLabel}`;
   document.getElementById('practice-subtitle').textContent =
@@ -925,9 +814,6 @@ function renderPractice() {
   document.getElementById('practice-detail').innerHTML = p.detail;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   리셋
-═══════════════════════════════════════════════════════════════ */
 function resetAll() {
   STATE.zone = null; STATE.object = null; STATE.element = null; STATE.practiceType = null;
   document.querySelectorAll('.zone, .object-chip, .practice-option').forEach(x => x.classList.remove('selected'));
@@ -937,9 +823,6 @@ function resetAll() {
   go(0);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   init
-═══════════════════════════════════════════════════════════════ */
 renderZones();
 bindPracticeOptions();
 updateProgress();
